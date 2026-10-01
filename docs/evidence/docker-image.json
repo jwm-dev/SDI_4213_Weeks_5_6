@@ -1,0 +1,26 @@
+{
+  "image": "sdi4213-week56:0.1.0",
+  "id": "sha256:01eb05ba1346b7a6fe944580689ef5ed7483f9e9be4e58c4bff6f20135e50f56",
+  "repo_digests": [
+    "sdi4213-week56@sha256:01eb05ba1346b7a6fe944580689ef5ed7483f9e9be4e58c4bff6f20135e50f56"
+  ],
+  "working_directory": "/app",
+  "exposed_ports": {
+    "8000/tcp": {}
+  },
+  "command": [
+    "python",
+    "-m",
+    "uvicorn",
+    "app.main:app",
+    "--host",
+    "0.0.0.0",
+    "--port",
+    "8000"
+  ],
+  "health": {
+    "status": "ok"
+  },
+  "container_removed": true,
+  "image_remains": true
+}

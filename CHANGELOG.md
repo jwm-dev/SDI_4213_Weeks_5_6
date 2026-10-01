@@ -2,6 +2,14 @@
 
 ## Unreleased
 
+### Added
+- Dockerfile using Python 3.13 slim and Uvicorn on port 8000.
+- Docker build-context exclusions for development files, caches, and environment files.
+- Container build/run/health/log/cleanup evidence for image `sdi4213-week56:0.1.0`.
+
+The Docker configuration follows the Week 5 `v0.1.0` release, as required by the
+assignment sequence. The application source and `VERSION` remain unchanged.
+
 ## [0.1.0] - 2026-10-01
 
 ### Added

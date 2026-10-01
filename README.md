@@ -1,8 +1,9 @@
-# SDI 4213 – Weeks 5–6 Individual Exercise Starter
+# SDI 4213 – Weeks 5–6 Individual Exercise
 
-This repository is the starter project for the **Weeks 5–6 Individual Exercise** in **SDI 4213-980: DevOps – CI/CD**.
+This repository completes the **Weeks 5–6 Individual Exercise** in **SDI 4213-980:
+DevOps – CI/CD**, using the instructor's FastAPI inventory application and tests.
 
-You will extend a working CI project by adding two major capabilities:
+The project demonstrates two capabilities:
 
 1. **Week 5 – Build and Release Automation**
    - preserve the existing automated tests
@@ -127,13 +128,41 @@ unzip dist/downloaded/sdi4213-app.zip -d dist/extracted
 `VERSION` contains `0.1.0`. The corresponding Git tag is `v0.1.0`; release notes
 are recorded in [CHANGELOG.md](CHANGELOG.md) and on the GitHub Release.
 
-## Week 6 Starting Point
+## Week 6 Docker Containerization
 
-The repository contains a starter `Dockerfile` and `.dockerignore` with TODO comments. Complete them using the assignment instructions and course lecture material.
+The Dockerfile starts from `python:3.13-slim`, uses `/app`, installs the pinned
+requirements before copying `app/`, and runs Uvicorn on `0.0.0.0:8000`.
+`.dockerignore` excludes Git metadata, virtual environments, Python caches,
+environment files, generated packages, tests, and assignment documents.
+
+Start Docker Desktop, then run these commands in macOS Terminal:
+
+```bash
+docker build -t sdi4213-week56:0.1.0 .
+docker images sdi4213-week56
+docker run -d -p 8000:8000 --name sdi4213-week56-demo sdi4213-week56:0.1.0
+docker ps --filter name=sdi4213-week56-demo
+curl --fail http://localhost:8000/health
+docker logs sdi4213-week56-demo
+docker stop sdi4213-week56-demo
+docker rm sdi4213-week56-demo
+docker images sdi4213-week56
+```
+
+The health response is `{"status":"ok"}`. Port mapping `-p 8000:8000` connects
+host port 8000 to the container's port 8000; `EXPOSE` alone does not publish it.
+After cleanup the container is gone, but the versioned image remains and can
+create another container.
+
+Version `0.1.0` in `VERSION` corresponds to the Git tag `v0.1.0` and the Docker
+image tag `sdi4213-week56:0.1.0`. Following the assignment order, the release tag
+records the Week 5 build; Docker configuration is added to `main` afterward
+without changing the application source.
 
 ## Evidence
 
-Use `docs/evidence-template.md` to record links, commands, screenshots, and reflections required by the assignment.
+See [the completed evidence](docs/evidence-template.md) for workflow and PR links,
+release details, captured command output, artifact contents, and reflections.
 
 ## Important
 

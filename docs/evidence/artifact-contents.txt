@@ -1,0 +1,15 @@
+Downloaded from run 36926050064
+Artifact: sdi4213-app
+Archive: sdi4213-app.zip
+SHA256: 3bda490ca73b16a8e175398f323b83113d42a1a67dd8341bf83131a9a6fd1300
+Files:
+README.md
+VERSION
+app/__init__.py
+app/main.py
+app/models.py
+app/services.py
+requirements.txt
+ZIP integrity: passed
+All files match reviewed source: passed
+VERSION: 0.1.0
