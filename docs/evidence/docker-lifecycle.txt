@@ -1,0 +1,42 @@
+$ docker images sdi4213-week56
+REPOSITORY       TAG       IMAGE ID       CREATED          SIZE
+sdi4213-week56   0.1.0     01eb05ba1346   21 seconds ago   251MB
+
+$ docker run -d -p 8000:8000 --name sdi4213-week56-demo sdi4213-week56:0.1.0
+e2ec8054eb33a52368e255e8a984b00c04ecdece44c06e25fcfcb2ea387c5be5
+
+$ docker ps --filter 'name=^/sdi4213-week56-demo$'
+CONTAINER ID   IMAGE                  COMMAND                  CREATED         STATUS        PORTS                                         NAMES
+e2ec8054eb33   sdi4213-week56:0.1.0   "python -m uvicorn a…"   2 seconds ago   Up 1 second   0.0.0.0:8000->8000/tcp, [::]:8000->8000/tcp   sdi4213-week56-demo
+
+$ curl --silent --show-error --fail http://localhost:8000/health
+{"status":"ok"}
+$ docker exec sdi4213-week56-demo python --version
+Python 3.13.15
+
+$ docker exec sdi4213-week56-demo python -m pip check
+No broken requirements found.
+
+$ docker logs sdi4213-week56-demo
+INFO:     Started server process [1]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     192.168.65.1:19931 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.65.1:40138 - "GET /health HTTP/1.1" 200 OK
+
+$ docker stop sdi4213-week56-demo
+sdi4213-week56-demo
+
+$ docker rm sdi4213-week56-demo
+sdi4213-week56-demo
+
+$ docker ps -a --filter 'name=^/sdi4213-week56-demo$'
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+
+$ docker images sdi4213-week56
+REPOSITORY       TAG       IMAGE ID       CREATED          SIZE
+sdi4213-week56   0.1.0     01eb05ba1346   26 seconds ago   251MB
+
+VERIFIED: container removed; versioned image remains unchanged.
+Image ID: sha256:01eb05ba1346b7a6fe944580689ef5ed7483f9e9be4e58c4bff6f20135e50f56

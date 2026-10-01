@@ -1,0 +1,12 @@
+Command: python -m uvicorn app.main:app --host 127.0.0.1 --port 8000
+Working directory: extracted CI ZIP
+INFO:     Started server process [17323]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     127.0.0.1:53983 - "GET /health HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [17323]
+Extracted artifact /health: {"status": "ok"}
