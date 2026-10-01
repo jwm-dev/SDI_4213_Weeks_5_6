@@ -31,9 +31,27 @@ jobs:
       - name: Run automated tests
         run: python -m pytest -v
 
-      # WEEK 5 TODO:
-      # Add steps below to:
-      # 1. Create a build directory.
-      # 2. Copy the application files, requirements.txt, README.md, and VERSION.
-      # 3. Create a ZIP package from the build directory.
-      # 4. Upload that ZIP file with actions/upload-artifact@v4.
+      - name: Create release package
+        run: |
+          mkdir -p dist/package
+          python - <<'PY'
+          from pathlib import Path
+          import shutil
+
+          package = Path("dist/package")
+          shutil.copytree(
+              "app", package / "app", dirs_exist_ok=True,
+              ignore=shutil.ignore_patterns("__pycache__", "*.pyc", "*.pyo"),
+          )
+          for filename in ("requirements.txt", "README.md", "VERSION"):
+              shutil.copy2(filename, package / filename)
+          shutil.make_archive("dist/sdi4213-app", "zip", root_dir=package)
+          PY
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: sdi4213-app
+          path: dist/sdi4213-app.zip
+          if-no-files-found: error
+          retention-days: 90

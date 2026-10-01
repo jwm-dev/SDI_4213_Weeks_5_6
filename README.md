@@ -51,7 +51,20 @@ You will extend a working CI project by adding two major capabilities:
 
 ## Before You Begin
 
-Create and activate a Python virtual environment.
+Use Python **3.13**, matching CI and the Docker base image. Create and activate a
+project virtual environment; install packages with `python -m pip` so they belong
+to the selected interpreter. See [Python setup](docs/python-setup.md) for macOS
+environment management.
+
+### macOS / Linux Terminal
+
+```bash
+python3.13 -m venv .venv
+source .venv/bin/activate
+python -m pip install --upgrade pip
+python -m pip install -r requirements.txt
+python -m pytest -v
+```
 
 ### Windows PowerShell
 
@@ -90,16 +103,29 @@ Issue → Branch → Change → Commit → Push → Pull Request → CI → Revi
 
 Do not perform routine assignment work directly on `main`.
 
-## Week 5 Starting Point
+## Week 5 Build Automation
 
-The workflow in `.github/workflows/ci.yml` currently runs automated tests.
+The [CI workflow](.github/workflows/ci.yml) runs on pushes to `main` and pull
+requests targeting `main`. It uses `ubuntu-latest`, selects Python 3.13, installs
+`requirements.txt`, and runs all 15 tests with `python -m pytest -v`.
 
-Your job is to complete the **TODO** section so the workflow also:
+After the tests pass, it creates `dist/package` and packages `app/`,
+`requirements.txt`, this README, and `VERSION` into `dist/sdi4213-app.zip`.
+Python bytecode and cache folders are excluded. `actions/upload-artifact@v4`
+uploads the ZIP as **sdi4213-app**, retained for 90 days. A test failure prevents
+packaging and upload.
 
-1. creates a release package
-2. uploads that package as a GitHub Actions artifact
+Download **sdi4213-app** from a successful Actions run, then extract the inner
+`sdi4213-app.zip`. With GitHub CLI:
 
-Do not remove the automated test step.
+```bash
+gh run download <RUN_ID> --name sdi4213-app --dir dist/downloaded
+unzip -l dist/downloaded/sdi4213-app.zip
+unzip dist/downloaded/sdi4213-app.zip -d dist/extracted
+```
+
+`VERSION` contains `0.1.0`. The corresponding Git tag is `v0.1.0`; release notes
+are recorded in [CHANGELOG.md](CHANGELOG.md) and on the GitHub Release.
 
 ## Week 6 Starting Point
 
