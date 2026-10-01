@@ -82,6 +82,10 @@ No `.venv`, credentials, Python bytecode, or caches are included in the package.
 - Issue: [Containerize application #3](https://github.com/jwm-dev/SDI_4213_Weeks_5_6/issues/3).
 - Branch: `feature/docker-container`, created from updated `main` after the
   build PR merge and `v0.1.0` release.
+- Pull request: [Containerize application with Docker #4](https://github.com/jwm-dev/SDI_4213_Weeks_5_6/pull/4).
+- Workflow run: [Docker PR CI](https://github.com/jwm-dev/SDI_4213_Weeks_5_6/actions/runs/36926764886).
+  The [PR checks](https://github.com/jwm-dev/SDI_4213_Weeks_5_6/pull/4/checks)
+  also show CI for the final documentation commit.
 - Runtime: **Docker Desktop 4.48.0**, Docker Engine **28.5.1**, context
   `desktop-linux`, on this Intel Mac running macOS 13.7.8.
   [Captured Docker version](evidence/docker-version.txt).
