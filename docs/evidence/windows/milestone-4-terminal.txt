@@ -1,0 +1,140 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SDI 4213-980 | Weeks 5-6 | Jeffrey Gregory | Windows verification
+Repository: https://github.com/jwm-dev/SDI_4213_Weeks_5_6
+Captured session: 2026-10-06 09:00:37 -05:00
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+PS C:\Users\jwm-d\Desktop\sdi-4213 weeks 5&6 assignment\SDI_4213_Weeks_5_6> Get-ChildItem dist/extractedMode   Length Name
+----   ------ ----
+d-----        app
+-a---- 3995   README.md
+-a---- 88     requirements.txt
+-a---- 6      VERSION
+PS C:\Users\jwm-d\Desktop\sdi-4213 weeks 5&6 assignment\SDI_4213_Weeks_5_6> Get-ChildItem dist/extracted/appMode   Length Name
+----   ------ ----
+-a----   1160 main.py
+-a----    296 models.py
+-a----   1236 services.py
+-a----     63 __init__.pyPS C:\Users\jwm-d\Desktop\sdi-4213 weeks 5&6 assignment\SDI_4213_Weeks_5_6> Get-Content dist/extracted/VERSION
+0.1.0PS C:\Users\jwm-d\Desktop\sdi-4213 weeks 5&6 assignment\SDI_4213_Weeks_5_6> Get-FileHash dist/downloaded/sdi4213-app.zip -Algorithm SHA256
+
+
+Algorithm : SHA256
+Hash      : 3BDA490CA73B16A8E175398F323B83113D42A1A67DD8341BF83131A9A6FD1300Milestone command(s) completed.

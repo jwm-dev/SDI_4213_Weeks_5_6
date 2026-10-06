@@ -69,9 +69,13 @@ python -m pytest -v
 
 ### Windows PowerShell
 
+Use the Python launcher to select the required Python 3.13 version when creating
+the environment, including on machines with another default Python version.
+
 ```powershell
-python -m venv .venv
-.venv\Scripts\Activate.ps1
+py -3.13 -m venv .venv
+.\.venv\Scripts\Activate.ps1
+python -m pip install --upgrade pip
 python -m pip install -r requirements.txt
 ```
 
@@ -117,7 +121,23 @@ uploads the ZIP as **sdi4213-app**, retained for 90 days. A test failure prevent
 packaging and upload.
 
 Download **sdi4213-app** from a successful Actions run, then extract the inner
-`sdi4213-app.zip`. With GitHub CLI:
+`sdi4213-app.zip`.
+
+### Windows PowerShell
+
+The example below uses the successful build PR run. Use another successful run
+ID to download its artifact.
+
+```powershell
+$runId = 36926050064
+gh run download $runId --repo jwm-dev/SDI_4213_Weeks_5_6 --name sdi4213-app --dir dist/downloaded
+Expand-Archive -LiteralPath .\dist\downloaded\sdi4213-app.zip -DestinationPath .\dist\extracted -Force
+Get-ChildItem .\dist\extracted
+Get-ChildItem .\dist\extracted\app
+Get-Content .\dist\extracted\VERSION
+```
+
+### macOS / Linux Terminal
 
 ```bash
 gh run download <RUN_ID> --name sdi4213-app --dir dist/downloaded
@@ -135,7 +155,36 @@ requirements before copying `app/`, and runs Uvicorn on `0.0.0.0:8000`.
 `.dockerignore` excludes Git metadata, virtual environments, Python caches,
 environment files, generated packages, tests, and assignment documents.
 
-Start Docker Desktop, then run these commands in macOS Terminal:
+Start Docker Desktop and wait for the engine to run. Verify the installation
+before building the exercise image; these commands work in PowerShell or a
+macOS/Linux terminal:
+
+```text
+docker --version
+docker compose version
+docker run hello-world
+```
+
+Continue after `docker run hello-world` prints **Hello from Docker!**.
+
+### Windows PowerShell
+
+```powershell
+docker build -t sdi4213-week56:0.1.0 .
+docker images sdi4213-week56
+docker run -d -p 8000:8000 --name sdi4213-week56-demo sdi4213-week56:0.1.0
+docker ps --filter name=sdi4213-week56-demo
+Invoke-RestMethod http://localhost:8000/health
+docker logs sdi4213-week56-demo
+docker stop sdi4213-week56-demo
+docker rm sdi4213-week56-demo
+docker ps -a --filter name=sdi4213-week56-demo
+docker images sdi4213-week56
+```
+
+The health request displays a `status` field with the value `ok`.
+
+### macOS / Linux Terminal
 
 ```bash
 docker build -t sdi4213-week56:0.1.0 .
