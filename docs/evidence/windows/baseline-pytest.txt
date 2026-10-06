@@ -1,0 +1,30 @@
+============================= test session starts =============================
+platform win32 -- Python 3.13.14, pytest-8.4.1, pluggy-1.6.0 -- C:\Users\jwm-d\Desktop\sdi-4213 weeks 5&6 assignment\SDI_4213_Weeks_5_6\.venv\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\jwm-d\Desktop\sdi-4213 weeks 5&6 assignment\starter-validation
+plugins: anyio-4.15.1
+collecting ... collected 15 items
+
+tests/test_api.py::test_root_route_returns_message PASSED                [  6%]
+tests/test_api.py::test_health_check_returns_ok PASSED                   [ 13%]
+tests/test_api.py::test_read_items_returns_count_and_items PASSED        [ 20%]
+tests/test_api.py::test_read_item_returns_one_item PASSED                [ 26%]
+tests/test_api.py::test_read_item_returns_404_for_missing_item PASSED    [ 33%]
+tests/test_api.py::test_add_item_creates_item PASSED                     [ 40%]
+tests/test_api.py::test_add_item_rejects_duplicate_id PASSED             [ 46%]
+tests/test_services.py::test_get_all_items_returns_starter_items PASSED  [ 53%]
+tests/test_services.py::test_get_item_by_id_returns_matching_item PASSED [ 60%]
+tests/test_services.py::test_get_item_by_id_returns_none_for_missing_item PASSED [ 66%]
+tests/test_services.py::test_calculate_total_quantity PASSED             [ 73%]
+tests/test_services.py::test_is_low_stock_true_when_quantity_at_threshold PASSED [ 80%]
+tests/test_services.py::test_is_low_stock_false_when_quantity_above_threshold PASSED [ 86%]
+tests/test_services.py::test_create_item_adds_new_item PASSED            [ 93%]
+tests/test_services.py::test_create_item_rejects_duplicate_id PASSED     [100%]
+
+============================== warnings summary ===============================
+..\SDI_4213_Weeks_5_6\.venv\Lib\site-packages\starlette\testclient.py:51
+  C:\Users\jwm-d\Desktop\sdi-4213 weeks 5&6 assignment\SDI_4213_Weeks_5_6\.venv\Lib\site-packages\starlette\testclient.py:51: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.
+    _PortalFactoryType = Callable[[], AbstractContextManager[anyio.abc.BlockingPortal]]
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================== 15 passed, 1 warning in 0.17s ========================

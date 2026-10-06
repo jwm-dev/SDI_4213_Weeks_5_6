@@ -1,0 +1,23 @@
+{
+  "name": "Jeffrey Gregory",
+  "course": "SDI 4213-980",
+  "verification_date": "2026-10-06",
+  "timezone": "America/Chicago",
+  "repository_url": "https://github.com/jwm-dev/SDI_4213_Weeks_5_6",
+  "source_commit_before_evidence": "b36706e",
+  "starter_commit": "333bc5f",
+  "local_python": "3.13.14",
+  "local_tests_passed": 15,
+  "docker_desktop": "4.53.0",
+  "docker_engine": "29.0.1",
+  "docker_compose": "v2.40.3-desktop.1",
+  "container_python": "3.13.16",
+  "docker_image": "sdi4213-week56:0.1.0",
+  "docker_image_id": "sha256:1cf7aaad2feb08b59f5205f116655ea8d1664d61e45551256037039c61adee14",
+  "container_id": "2fe4e125cf06b1390179913fbaa5813c39893caec394cb8ce90931de79275791",
+  "health_response": {"status":"ok"},
+  "container_removed": true,
+  "image_retained": true,
+  "build_zip_sha256": "3bda490ca73b16a8e175398f323b83113d42a1a67dd8341bf83131a9a6fd1300",
+  "git_release_tag": "v0.1.0"
+}

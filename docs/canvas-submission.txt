@@ -1,0 +1,43 @@
+SDI 4213-980 - Weeks 5-6 Individual Exercise
+Jeffrey Gregory
+
+Submission files
+1. Jeffrey_Gregory_SDI4213_Weeks5_6_Evidence.pdf
+   The primary evidence document: ten screenshots in numerical order, captions,
+   GitHub links, verification details, and concept explanations.
+2. Jeffrey_Gregory_SDI4213_Weeks5_6_Source_and_Evidence.zip
+   Supplemental complete tracked project and evidence. It excludes Git metadata,
+   the local virtual environment, downloaded working artifacts, and credentials.
+
+Canvas instructions
+1. Sign in to Canvas and open SDI 4213-980.
+2. Open Assignments and select the Weeks 5-6 Individual Exercise:
+   Build, Release, and Containerize an Application.
+3. Select Start Assignment / Submit Assignment and use File Upload if available.
+4. Upload the Evidence PDF. Add the Source and Evidence ZIP if the assignment
+   accepts multiple files or requests project files. The PDF is the required
+   screenshot evidence document; a ZIP alone may not be previewable in Canvas.
+5. If a Website URL submission field is available, enter:
+   https://github.com/jwm-dev/SDI_4213_Weeks_5_6
+6. If only a text-entry field is available, paste the repository URL and links to
+   the release and evidence template listed below. Use the editor's file upload
+   function for the PDF if available. Follow the assignment's enabled submission
+   type; the local PDF already includes every required link.
+7. Review the PDF and confirm it is the file selected before submitting.
+8. Click Submit Assignment. Confirm the successful submission status, timestamp,
+   and attachment names. Save the submission confirmation for your records.
+
+Optional submission comment
+Repository: https://github.com/jwm-dev/SDI_4213_Weeks_5_6
+Release: https://github.com/jwm-dev/SDI_4213_Weeks_5_6/releases/tag/v0.1.0
+Evidence: https://github.com/jwm-dev/SDI_4213_Weeks_5_6/blob/main/docs/evidence-template.md
+The attached PDF contains the ten milestone screenshots, captions, commands,
+URLs, and Windows verification. Build and containerization PRs passed CI and
+were merged. The local starter and completed project each passed all 15 tests.
+
+Current verified state
+Image sdi4213-week56:0.1.0 remains in installed Docker Desktop. The demonstration
+container was stopped and removed after health and log verification.
+
+Canvas itself has not been submitted automatically. Course-specific submission
+type and due date should be reviewed in Canvas.
