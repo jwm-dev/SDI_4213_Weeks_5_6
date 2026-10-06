@@ -133,6 +133,5 @@ CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
 PS C:\Users\jwm-d\Desktop\sdi-4213 weeks 5&6 assignment\SDI_4213_Weeks_5_6> docker images sdi4213-week56
                                                                                                                            Info ->  U In Use
 IMAGE                  ID             DISK USAGE   CONTENT SIZE   EXTRA
-sdi4213-week56:0.1.0   1cf7aaad2feb        251MB         59.7MB        
+sdi4213-week56:0.1.0   1cf7aaad2feb        251MB         59.7MB
 Milestone command(s) completed.
-

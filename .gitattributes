@@ -1,0 +1,4 @@
+# Preserve evidence artifacts byte-for-byte, including ASCII-encoded PDFs.
+*.pdf binary
+*.jpg binary
+*.png binary

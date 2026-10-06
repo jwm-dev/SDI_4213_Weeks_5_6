@@ -124,4 +124,3 @@ PS C:\Users\jwm-d\Desktop\sdi-4213 weeks 5&6 assignment\SDI_4213_Weeks_5_6> dock
 CONTAINER ID   IMAGE                  COMMAND                  CREATED         STATUS         PORTS                                         NAMES
 2fe4e125cf06   sdi4213-week56:0.1.0   "python -m uvicorn a…"   4 minutes ago   Up 4 minutes   0.0.0.0:8000->8000/tcp, [::]:8000->8000/tcp   sdi4213-week56-demo
 Milestone command(s) completed.
-
